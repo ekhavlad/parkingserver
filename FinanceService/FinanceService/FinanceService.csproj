@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48D74A9B-FA90-4FCD-8A00-E34E60FA0356}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinanceService</RootNamespace>
+    <AssemblyName>FinanceService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interfaces">
+      <HintPath>..\..\libs\Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FinanceDataProvider_Rate.cs" />
+    <Compile Include="FinanceDataProvider_Payment.cs" />
+    <Compile Include="FinanceService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FinanceServiceRequestProcessor.cs" />
+    <Compile Include="FinanceDataProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataService\IDataService\IDataService.csproj">
+      <Project>{4b3ef485-b15a-4a17-aade-7e38ca86b09c}</Project>
+      <Name>IDataService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EventService\IEventService\IEventService.csproj">
+      <Project>{7599e54f-4715-45ed-a451-6704e2382ced}</Project>
+      <Name>IEventService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RequestProcessor\IRequestProcessor\IRequestProcessor.csproj">
+      <Project>{645641d0-47a8-4e26-96e6-cee7791e6a72}</Project>
+      <Name>IRequestProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SerializationService\ISerializationService\ISerializationService.csproj">
+      <Project>{b16cb637-eaea-484f-9ef2-40b1d1351be3}</Project>
+      <Name>ISerializationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IFinanceService\IFinanceService.csproj">
+      <Project>{5a8682a5-8440-4a11-b505-c6e05cadfb81}</Project>
+      <Name>IFinanceService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

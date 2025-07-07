@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0345F48F-1CEF-4BA7-8DD0-B7B9104F2EFF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReportService</RootNamespace>
+    <AssemblyName>ReportService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interfaces">
+      <HintPath>..\..\libs\Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ReportDataProvider.cs" />
+    <Compile Include="ReportManager.cs" />
+    <Compile Include="ReportRequestProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataService\IDataService\IDataService.csproj">
+      <Project>{4b3ef485-b15a-4a17-aade-7e38ca86b09c}</Project>
+      <Name>IDataService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EventService\IEventService\IEventService.csproj">
+      <Project>{7599e54f-4715-45ed-a451-6704e2382ced}</Project>
+      <Name>IEventService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RequestProcessor\IRequestProcessor\IRequestProcessor.csproj">
+      <Project>{645641d0-47a8-4e26-96e6-cee7791e6a72}</Project>
+      <Name>IRequestProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SerializationService\ISerializationService\ISerializationService.csproj">
+      <Project>{b16cb637-eaea-484f-9ef2-40b1d1351be3}</Project>
+      <Name>ISerializationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IReportService\IReportService.csproj">
+      <Project>{c03b8f0f-8c12-4115-a2e2-c26703d81edb}</Project>
+      <Name>IReportService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

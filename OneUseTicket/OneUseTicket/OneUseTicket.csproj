@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D1716D87-0612-4354-BC3D-ACE0F03D1CEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OneUseTicket</RootNamespace>
+    <AssemblyName>OneUseTicket</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interfaces">
+      <HintPath>..\..\libs\Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="OneUseTicketDataProvider.cs" />
+    <Compile Include="OneUseTicketNumberGenerator.cs" />
+    <Compile Include="OneUseTicketRequestProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataService\IDataService\IDataService.csproj">
+      <Project>{4b3ef485-b15a-4a17-aade-7e38ca86b09c}</Project>
+      <Name>IDataService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Equipment\IEquipment\IEquipment.csproj">
+      <Project>{b886a77b-a2f7-4386-8877-178796acd178}</Project>
+      <Name>IEquipment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RequestProcessor\IRequestProcessor\IRequestProcessor.csproj">
+      <Project>{645641d0-47a8-4e26-96e6-cee7791e6a72}</Project>
+      <Name>IRequestProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SerializationService\ISerializationService\ISerializationService.csproj">
+      <Project>{b16cb637-eaea-484f-9ef2-40b1d1351be3}</Project>
+      <Name>ISerializationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Session\ISession\ISession.csproj">
+      <Project>{7f9f82b5-cf0c-4852-bcf1-9344c840f5c2}</Project>
+      <Name>ISession</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

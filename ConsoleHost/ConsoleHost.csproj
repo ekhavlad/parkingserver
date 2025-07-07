@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C77945B-B149-4EA4-9C38-CF957A4FF50D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleHost</RootNamespace>
+    <AssemblyName>ConsoleHost</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interfaces">
+      <HintPath>..\libs\Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\libs\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\libs\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context.cs" />
+    <Compile Include="Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataService\DataService\DataService.csproj">
+      <Project>{3f8be00c-3c2d-41f2-8ba9-6dc9b025748c}</Project>
+      <Name>DataService %28DataService\DataService%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataService\IDataService\IDataService.csproj">
+      <Project>{4b3ef485-b15a-4a17-aade-7e38ca86b09c}</Project>
+      <Name>IDataService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Equipment\Equipment\Equipment.csproj">
+      <Project>{8a08613d-3255-411b-a5a8-7d1f2779f20b}</Project>
+      <Name>Equipment %28Equipment\Equipment%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Equipment\IEquipment\IEquipment.csproj">
+      <Project>{b886a77b-a2f7-4386-8877-178796acd178}</Project>
+      <Name>IEquipment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventService\EventService\EventService.csproj">
+      <Project>{cb9792a4-380f-4d21-be0e-79dc9cd9b161}</Project>
+      <Name>EventService %28EventService\EventService%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventService\IEventService\IEventService.csproj">
+      <Project>{7599e54f-4715-45ed-a451-6704e2382ced}</Project>
+      <Name>IEventService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinanceService\BaseCalculator\BaseCalculator.csproj">
+      <Project>{55d79e41-00e8-4525-94ab-70a3bfa86c97}</Project>
+      <Name>BaseCalculator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinanceService\FinanceService\FinanceService.csproj">
+      <Project>{48d74a9b-fa90-4fcd-8a00-e34e60fa0356}</Project>
+      <Name>FinanceService %28FinanceService\FinanceService%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinanceService\IFinanceService\IFinanceService.csproj">
+      <Project>{5a8682a5-8440-4a11-b505-c6e05cadfb81}</Project>
+      <Name>IFinanceService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OneUseTicket\OneUseTicket\OneUseTicket.csproj">
+      <Project>{d1716d87-0612-4354-bc3d-ace0f03d1cec}</Project>
+      <Name>OneUseTicket %28OneUseTicket\OneUseTicket%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportService\IReportService\IReportService.csproj">
+      <Project>{c03b8f0f-8c12-4115-a2e2-c26703d81edb}</Project>
+      <Name>IReportService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportService\ReportService\ReportService.csproj">
+      <Project>{0345f48f-1cef-4ba7-8dd0-b7b9104f2eff}</Project>
+      <Name>ReportService %28ReportService\ReportService%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportService\Reports\PassageLog\PassageLog.csproj">
+      <Project>{afae9f43-e84b-445f-acd7-a973b3ef3d0c}</Project>
+      <Name>PassageLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportService\Reports\PlacesLog\PlacesLog.csproj">
+      <Project>{65751702-cbbe-4786-9d4b-fbf04fd59262}</Project>
+      <Name>PlacesLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RequestProcessor\IRequestProcessor\IRequestProcessor.csproj">
+      <Project>{645641d0-47a8-4e26-96e6-cee7791e6a72}</Project>
+      <Name>IRequestProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RequestProcessor\PrimaryRequestProcessor\PrimaryRequestProcessor.csproj">
+      <Project>{d97fd9cf-9210-49c2-a38d-b1e4e49c005b}</Project>
+      <Name>PrimaryRequestProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RequestProcessor\RequestLog\RequestLog.csproj">
+      <Project>{36c29fb0-6f81-4278-beb8-a32c4dafeb09}</Project>
+      <Name>RequestLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RequestProcessor\Security\Security.csproj">
+      <Project>{55332766-73fa-4049-8986-9a875e51adc1}</Project>
+      <Name>Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SerializationService\ISerializationService\ISerializationService.csproj">
+      <Project>{b16cb637-eaea-484f-9ef2-40b1d1351be3}</Project>
+      <Name>ISerializationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SerializationService\SerializationService\SerializationService.csproj">
+      <Project>{8cb857f7-6efa-40c1-8da9-a4ea1712fca6}</Project>
+      <Name>SerializationService %28SerializationService\SerializationService%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerAPI\IServerAPI\IServerAPI.csproj">
+      <Project>{0acfe14d-c487-4d4a-92ff-3f815bfc8f3f}</Project>
+      <Name>IServerAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerAPI\ServerAPI\ServerAPI.csproj">
+      <Project>{296bd947-6b4a-4de6-9812-ebfdd48bec00}</Project>
+      <Name>ServerAPI %28ServerAPI\ServerAPI%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerDictionary\IServerDictionary\IServerDictionary.csproj">
+      <Project>{9d9c62a4-8ab3-46b0-a5f8-fc7132fd1217}</Project>
+      <Name>IServerDictionary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerDictionary\ServerDictionary\ServerDictionary.csproj">
+      <Project>{b458b4c4-8ff5-46c3-afab-d1820f6d9fd8}</Project>
+      <Name>ServerDictionary %28ServerDictionary\ServerDictionary%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Session\ISession\ISession.csproj">
+      <Project>{7f9f82b5-cf0c-4852-bcf1-9344c840f5c2}</Project>
+      <Name>ISession</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Session\Session\Session.csproj">
+      <Project>{509b4f7c-acbc-4273-bf7f-633e7d83ee82}</Project>
+      <Name>Session %28Session\Session%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
